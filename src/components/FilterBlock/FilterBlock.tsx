@@ -8,6 +8,7 @@ type Props = {
   reset: () => void;
   changeQuery: (event: React.ChangeEvent<HTMLInputElement>) => void;
   query: string;
+  resetQuery: () => void;
 };
 
 export const FilterBlock: FC<Props> = ({
@@ -16,6 +17,7 @@ export const FilterBlock: FC<Props> = ({
   reset,
   changeQuery,
   query,
+  resetQuery,
 }) => {
   const [activeUser, setUser] = useState('all');
 
@@ -81,7 +83,7 @@ export const FilterBlock: FC<Props> = ({
                 data-cy="ClearButton"
                 type="button"
                 className="delete"
-                onClick={}
+                onClick={resetQuery}
               />
             </span>
           </p>
